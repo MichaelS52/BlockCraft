@@ -37,15 +37,21 @@ public class Chunk extends Node{
 				float y = (int) dilation.getY() * ((Perlin.perlin2D((float)(x * dilation.getX() + BIG_NUMBER),(float)( z * dilation.getZ() + BIG_NUMBER) + 1)) / 2) + 1;
 
 				for (int k = 0; k < 256; k++) {
-					if (k <= y) {
+                                        boolean isNonAir=false;
+					if (k < y) {
 						//place block
+                                                isNonAir=true;
                                                 Block b = new Block(i,k,j,3);
                                                 b.place();
                                                 attachChild(b);
-					} else {
-						 Block b = new Block(i,k,j,4);
+                                                
+					} else if(k==0 || k==-1){
+                                               if(!isNonAir){
+                                               System.out.println("Water.");
+                                               Block b = new Block(i,k,j,4);
                                                 b.place();
-                                                attachChild(b);	
+                                                attachChild(b);
+                                               }
 					}
 				}
 			}

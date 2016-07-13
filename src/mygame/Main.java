@@ -10,6 +10,7 @@ public class Main{
 
     public static String NAME="BlockCraft";
     
+    
     public static void main(String[] args) {
         Game game = new Game();
         AppSettings settings = new AppSettings(true);

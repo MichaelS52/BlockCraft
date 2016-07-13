@@ -33,11 +33,9 @@ public class Materials {
                 "Common/MatDefs/Misc/Unshaded.j3md");
         MATERIALS[2].setColor("Color", ColorRGBA.Red);
         
-        MATERIALS[3] = new Material(assetManager, 
-                "Common/MatDefs/Misc/Unshaded.j3md");
-        Texture gras = assetManager.loadTexture(new TextureKey("Textures/grasstop1.png",false));
+        MATERIALS[3] = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
         MATERIALS[3].setReceivesShadows(true);
-        MATERIALS[3].setTexture("ColorMap", gras);
+        MATERIALS[3].setTexture("DiffuseMap", assetManager.loadTexture("Textures/grasstop1.png"));
         
         
         MATERIALS[4] = new Material(assetManager,

@@ -52,7 +52,6 @@ public class Block extends Geometry{
         setLocalTranslation(this.x, this.y, this.z);
         setName("Box");
         System.out.println("Placed block @ " + x + "," + y + "," + z);
-        
     }
     
 }

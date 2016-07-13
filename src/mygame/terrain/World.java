@@ -4,6 +4,7 @@
  */
 package mygame.terrain;
 
+import com.jme3.bullet.control.BetterCharacterControl;
 import com.jme3.light.DirectionalLight;
 import com.jme3.light.PointLight;
 import com.jme3.math.ColorRGBA;
@@ -32,8 +33,8 @@ public class World extends Node{
                     this.chunks[x][z]=addChunk(x, z);
                 }
                 DirectionalLight sun = new DirectionalLight();
-                sun.setColor(ColorRGBA.White);
-                sun.setDirection(new Vector3f(-.5f,-.5f,-.5f).normalizeLocal());
+                sun.setColor(ColorRGBA.LightGray);
+                sun.setDirection(new Vector3f(-.5f,-.2f,-.5f).normalizeLocal());
                 addLight(sun);
             }
         }else{
@@ -43,7 +44,7 @@ public class World extends Node{
     }
     
     public Chunk addChunk(int x, int z){
-        Chunk c = new Chunk(x,z, new Location(.2d,20d,.2d));
+        Chunk c = new Chunk(x,z, new Location(.2d,40d,.2d));
         c.setLocalTranslation(x*16, .5f, z*16);
         attachChild(c);
         chunks[x][z]=c;
