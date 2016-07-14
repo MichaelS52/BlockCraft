@@ -1,5 +1,5 @@
 # BlockCraft
-Minecraft Clone written in Java w/ JMonkeyEngine
+A Minecraft terrain proof of concept written in Java w/ JMonkeyEngine
   - Features:
     - Chunk framework:
       - All blocks stored in chunk objects which are removed/added to the scene collectively.
