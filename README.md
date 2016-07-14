@@ -1,9 +1,9 @@
 # BlockCraft
 Minecraft Clone written in Java w/ JMonkeyEngine
-  Features:
-    Chunk framework:
-      All blocks stored in chunk objects which are removed/added to the scene collectively.
-      Loads certain amount of chunks around you
+  -Features:
+    -Chunk framework:
+      -All blocks stored in chunk objects which are removed/added to the scene collectively.
+      -Loads certain amount of chunks around you
       
 
 
