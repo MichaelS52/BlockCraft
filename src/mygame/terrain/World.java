@@ -19,35 +19,17 @@ import mygame.utils.LocationXZ;
  */
 public class World extends Node{
     
-    public Chunk[][] chunks;
     public static float[][] perlinNoise;
-    public static int sizeX, sizeZ;
     
-    public World(int sizeX, int sizeZ){
-        if(sizeX%16==0 && sizeZ%16==0){
-            this.chunks=new Chunk[sizeX/16][sizeZ/16];
-            int widthX = sizeX/16;
-            int widthZ = sizeZ/16;
-            for(int x=0; x<widthX; x++){
-                for(int z=0; z<widthZ; z++){
-                    this.chunks[x][z]=addChunk(x, z);
-                }
-                DirectionalLight sun = new DirectionalLight();
-                sun.setColor(ColorRGBA.LightGray);
-                sun.setDirection(new Vector3f(-.5f,-.2f,-.5f).normalizeLocal());
-                addLight(sun);
-            }
-        }else{
-            throw new ArithmeticException("World size invalid, must be a multiple of 16.");
-        }
+    public World(){
         
     }
     
     public Chunk addChunk(int x, int z){
-        Chunk c = new Chunk(x,z, new Location(.2d,40d,.2d));
+        Chunk c = new Chunk(x,z, new Location(.2d,80d,.2d));
         c.setLocalTranslation(x*16, .5f, z*16);
         attachChild(c);
-        chunks[x][z]=c;
+        ChunkManager.chunks.add(c);
         return c;
     }
     

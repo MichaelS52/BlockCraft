@@ -51,7 +51,7 @@ public class Block extends Geometry{
         setMaterial(mat);
         setLocalTranslation(this.x, this.y, this.z);
         setName("Box");
-        System.out.println("Placed block @ " + x + "," + y + "," + z);
+        setShadowMode(shadowMode.CastAndReceive);
     }
     
 }
